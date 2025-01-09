@@ -72,6 +72,39 @@ input, select, textarea {
     width: 100%;
     padding: 0.75rem;
     border: 1px;
+}
+.container {
+      text-align: center;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .btn-proceed {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+    }
+
+    .btn-proceed:hover {
+      transform: scale(1.1);
+      background: linear-gradient(to right, #2575fc, #6a11cb);
+      box-shadow: 0 4px 15px rgba(106, 17, 203, 0.5);
+    }
 </style>
 </head>
 <body>
@@ -120,7 +153,11 @@ input, select, textarea {
                     <textarea id="address" name="address" rows="4" placeholder="Enter your full address..." required></textarea>
                 </div>
 
-                <button type="submit">Proceed to payment</button>
+                 <div class="container">
+    <h1>Your Shopping Cart</h1>
+    <p>Total: $199.99</p>
+    <a href="#" class="btn-proceed">Proceed to Payment</a>
+  </div>
             </form>
         </section>
     </main>
