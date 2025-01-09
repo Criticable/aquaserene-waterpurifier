@@ -117,6 +117,16 @@
             background-color: #007bff;
             color: white;
         }
+
+        .price-breakdown {
+            text-align: left;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .price-breakdown span {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -172,6 +182,11 @@
 
                 <div class="container">
                     <h2>Subtotal: <span id="subtotal">--</span></h2>
+                    <div class="price-breakdown" id="priceBreakdown">
+                        <p><span>Base Price:</span> --</p>
+                        <p><span>GST:</span> --</p>
+                        <p><span>Export Fee:</span> --</p>
+                    </div>
                     <a href="#" class="btn-proceed" onclick="handlePayment()">Proceed to Payment</a>
                 </div>
             </form>
@@ -185,29 +200,48 @@
     <script>
         const countrySelect = document.getElementById('country');
         const subtotal = document.getElementById('subtotal');
+        const priceBreakdown = document.getElementById('priceBreakdown');
         const paymentMethod = document.getElementById('payment');
 
         countrySelect.addEventListener('change', () => {
-            let price = 0;
+            let basePrice = 0;
+            let gst = 0;
+            let exportFee = 10; // Flat $10 for export
+            let totalPrice = 0;
 
             switch (countrySelect.value) {
                 case 'India':
-                    price = '₹7200';
+                    basePrice = 6000; // Production cost in INR
+                    gst = basePrice * 0.2; // 20% GST
+                    totalPrice = basePrice + gst + exportFee;
+                    subtotal.textContent = `₹7200`;
                     break;
                 case 'USA':
-                    price = '$90';
+                    basePrice = 70; // Production cost in USD
+                    gst = basePrice * 0.1; // 10% GST
+                    totalPrice = basePrice + gst + exportFee;
+                    subtotal.textContent = `$90`;
                     break;
                 case 'UK':
                 case 'France':
                 case 'Germany':
                 case 'Spain':
-                    price = '€75 / £67';
+                    basePrice = 55; // Production cost in EUR
+                    gst = basePrice * 0.15; // 15% GST
+                    totalPrice = basePrice + gst + exportFee;
+                    subtotal.textContent = `€75 / £67`;
                     break;
                 default:
-                    price = '--';
+                    subtotal.textContent = '--';
+                    priceBreakdown.innerHTML = '<p>Please select a country to view price breakdown.</p>';
+                    return;
             }
 
-            subtotal.textContent = price;
+            priceBreakdown.innerHTML = `
+                <p><span>Base Price:</span> ${basePrice}</p>
+                <p><span>GST:</span> ${gst.toFixed(2)}</p>
+                <p><span>Export Fee:</span> ${exportFee}</p>
+            `;
         });
 
         function handlePayment() {
@@ -219,7 +253,6 @@
                 window.location.href = 'mailto:aarushtiwari101@gmail.com';
             } else if (payment === 'Credit Card' || payment === 'Debit Card') {
                 alert('Redirecting to card details page...');
-                // Redirect to a new page
                 window.location.href = 'credit-card-page.html';
             } else {
                 alert('Please select a payment method.');
