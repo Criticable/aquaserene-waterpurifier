@@ -4,111 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aqua Serene Shop</title>
-<style>
-/* style.css */
-body {
-    font-family: sans-serif;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+        }
 
-header {
-    background-color: #007bff;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
-    animation: slideInDown 0.5s ease-in-out forwards;
-}
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            animation: slideInDown 0.5s ease-in-out forwards;
+        }
 
-@keyframes slideInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-main {
-    flex-grow: 1;
-    display: flex;
-    justify-content: space-around;
-    padding: 2rem;
-}
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem;
+        }
 
-.product-showcase,
-.order-section {
-    flex: 1;
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.5s ease-in-out forwards;
-}
+        .product-showcase,
+        .order-section {
+            flex: 1;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-.form-group {
-    margin-bottom: 1rem;
-}
+        .form-group {
+            margin-bottom: 1rem;
+        }
 
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-}
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
 
-input, select, textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px;
-}
-.container {
-      text-align: center;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-    h1 {
-      color: #333;
-    }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-    .btn-proceed {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #ffffff;
-      background: linear-gradient(to right, #6a11cb, #2575fc);
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-      text-decoration: none;
-    }
+        h1, h2 {
+            color: #333;
+        }
 
-    .btn-proceed:hover {
-      transform: scale(1.1);
-      background: linear-gradient(to right, #2575fc, #6a11cb);
-      box-shadow: 0 4px 15px rgba(106, 17, 203, 0.5);
-    }
-</style>
+        .btn-proceed {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .btn-proceed:hover {
+            transform: scale(1.1);
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-
     <header>
         <h1>Aqua Serene Shop</h1>
     </header>
@@ -116,7 +127,14 @@ input, select, textarea {
     <main>
         <section class="product-showcase">
             <h2>Our Products</h2>
-            <p>We sell ONLY one water purifier, but IT IS <b></b>LEGENDARY</b>.<br>Buy now for only <b>$85 in USA</b><br><b>₹6,800 /- in India.</b><br><b>€65 for UK and other countries of Europe. (54 pounds)</b></p>
+            <p>We sell ONLY one water purifier, but IT IS <b>LEGENDARY</b>.<br>
+                Buy now for:
+                <ul>
+                    <li><b>$90 in USA</b></li>
+                    <li><b>₹7200 in India</b></li>
+                    <li><b>€75 / £67 in Europe/UK</b></li>
+                </ul>
+            </p>
         </section>
 
         <section class="order-section">
@@ -134,7 +152,6 @@ input, select, textarea {
                         <option value="Spain">Spain</option>
                         <option value="Other">Other</option>
                     </select>
-                    <span id="countryError" class="error"></span>
                 </div>
 
                 <div class="form-group">
@@ -153,18 +170,61 @@ input, select, textarea {
                     <textarea id="address" name="address" rows="4" placeholder="Enter your full address..." required></textarea>
                 </div>
 
-                 <div class="container">
-    <h1>Your Shopping Cart</h1>
-    <p>Total: $199.99</p>
-    <a href="#" class="btn-proceed">Proceed to Payment</a>
-  </div>
+                <div class="container">
+                    <h2>Subtotal: <span id="subtotal">--</span></h2>
+                    <a href="#" class="btn-proceed" onclick="handlePayment()">Proceed to Payment</a>
+                </div>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&nbsp;&nbsp;For any questions or assistance, please contact our owner at: <a href="tel:+917021573784">+91 70215 73784</a></p>
+        <p>For assistance, contact us at: <a href="tel:+917021573784">+91 70215 73784</a></p>
     </footer>
 
+    <script>
+        const countrySelect = document.getElementById('country');
+        const subtotal = document.getElementById('subtotal');
+        const paymentMethod = document.getElementById('payment');
+
+        countrySelect.addEventListener('change', () => {
+            let price = 0;
+
+            switch (countrySelect.value) {
+                case 'India':
+                    price = '₹7200';
+                    break;
+                case 'USA':
+                    price = '$90';
+                    break;
+                case 'UK':
+                case 'France':
+                case 'Germany':
+                case 'Spain':
+                    price = '€75 / £67';
+                    break;
+                default:
+                    price = '--';
+            }
+
+            subtotal.textContent = price;
+        });
+
+        function handlePayment() {
+            const payment = paymentMethod.value;
+
+            if (payment === 'UPI') {
+                alert('Please pay using UPI ID: rekhatiwari@okhdfcbank.com');
+            } else if (payment === 'PayPal') {
+                window.location.href = 'mailto:aarushtiwari101@gmail.com';
+            } else if (payment === 'Credit Card' || payment === 'Debit Card') {
+                alert('Redirecting to card details page...');
+                // Redirect to a new page
+                window.location.href = 'credit-card-page.html';
+            } else {
+                alert('Please select a payment method.');
+            }
+        }
+    </script>
 </body>
 </html>
