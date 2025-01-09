@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqua Serene Shop</title>
+<style>
+/* style.css */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    animation: slideInDown 0.5s ease-in-out forwards;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+.product-showcase,
+.order-section {
+    flex: 1;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border
+</style>
+</head>
+<body>
+
+    <header>
+        <h1>Aqua Serene Shop</h1>
+    </header>
+
+    <main>
+        <section class="product-showcase">
+            <h2>Our Products</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod risus eget nibh blandit, quis porta odio rutrum. Donec vel leo at magna aliquam molestie vitae eget est. Curabitur non nulla vel enim consequat auctor nec vitae elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aliquam erat volutpat.</p>
+        </section>
+
+        <section class="order-section">
+            <h2>Place Your Order</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select Country</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                    </select>
+                    <span id="countryError" class="error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="payment">Payment Method:</label>
+                    <select id="payment" name="payment" required>
+                        <option value="">Select Payment</option>
+                        <option value="Credit Card">Credit Card</option>
+                        <option value="Debit Card">Debit Card</option>
+                        <option value="PayPal">PayPal</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Delivery Address:</label>
+                    <textarea id="address" name="address" rows="4" placeholder="Enter your full address..." required></textarea>
+                </div>
+
+                <button type="submit">Place Order</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>For any questions or assistance, please contact our customer service at: <a href="tel:+917021573784">+91 70215 73784</a></p>
+    </footer>
+
+</body>
+</html>
